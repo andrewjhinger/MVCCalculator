@@ -1,0 +1,38 @@
+﻿@model MVCCalculator.Models.Calculator
+
+@{
+    ViewBag.Title = "MVC Calculator";
+    string[,] buttons = new string[,]
+    {
+        {"CE", "C", "<-", "/"},
+        {"1", "2", "3", "*"},
+        {"4", "5", "6", "-"},
+        {"7", "8", "9", "+"},
+        {"+/-", "0", ".", "="}
+    };
+}
+    
+<h2>Index@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.FirstOperation)
+    @Html.HiddenFor(m => m.PendingValue)
+    @Html.HiddenFor(m => m.PendingAction)
+
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.CurrentValue, new { style = "text-align: right;" })
+    </div>
+
+    <table>
+        @for (int row = 0; row < buttons.GetLength(0); row++)
+        {
+            <tr>
+            @for (int col = 0; col < buttons.GetLength(1); col++)
+            {
+                <td><input type="submit" name="key" id="key" value="@buttons[row, col]" style="width:40px" /></td>
+            }
+            </tr>
+        }
+    </table>
+}
