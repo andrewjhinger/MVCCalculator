@@ -10,7 +10,7 @@ namespace MVCCalculator.Tests
     [TestClass]
     public class UnitTests
     {
-        // Description: Enter number "123"
+
         [TestMethod]
         public void EnterNumber123()
         {
@@ -38,7 +38,6 @@ namespace MVCCalculator.Tests
             Assert.AreEqual(calculator.CurrentValue.ToString(), "123");
         }
 
-        // Description: Enter number "456"
         [TestMethod]
         public void EnterNumber456()
         {
@@ -66,7 +65,6 @@ namespace MVCCalculator.Tests
             Assert.AreEqual(calculator.CurrentValue.ToString(), "456");
         }
 
-        // Description: Enter number "456"
         [TestMethod]
         public void AddNumber()
         {
@@ -86,7 +84,6 @@ namespace MVCCalculator.Tests
             Assert.AreEqual(calculator.CurrentValue.ToString(), "2");
         }
 
-        // Description: Enter number "1"
         [TestMethod]
         public void Enter1()
         {
